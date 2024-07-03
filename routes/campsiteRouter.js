@@ -33,8 +33,8 @@ campsiteRouter.route('/')
 		res.statusCode = 200;
 		res.setHeader('Content-Type', 'application/json');
 		res.json(response);
-})
-.catch(err => next(err));
+    })
+    .catch(err => next(err));
 });
 
 // Use Route Parameters for specific campsite
@@ -63,7 +63,8 @@ campsiteRouter.route('/:campsiteId')
 		res.setHeader('Content-Type', 'application/json');
 		res.json(campsite);
 	})
-	.catch(err => next(err));})
+	.catch(err => next(err));
+})
 .delete((req, res, next) => {
 	Campsite.findByIdAndDelete(req.params.campsiteId)
 	.then(response => {
